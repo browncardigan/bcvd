@@ -22,14 +22,14 @@
 
 <section id="lead">
 	<div>
-		<a href="<?= WWW_PATH; ?>post/mate/"><img src="<?= WWW_PATH; ?>assets/temp/mate.jpg" /></a>
+		<a href="<?= WWW_PATH; ?>post/mate/"><img src="<?= WWW_PATH; ?>assets/temp/img/mate.jpg" /></a>
 	</div>
 </section>
 
 <section id="squares">
 	<? for ($i=0; $i<12; $i++) { ?>
 		<div class="sq">
-			<a href="<?= WWW_PATH; ?>post/warne/"><img src="<?= WWW_PATH; ?>assets/temp/warne.jpg" /></a>
+			<a href="<?= WWW_PATH; ?>post/warne/"><img src="<?= WWW_PATH; ?>assets/temp/img/warne.jpg" /></a>
 		</div>
 	<? } ?>
 </section>
