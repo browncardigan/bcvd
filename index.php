@@ -4,10 +4,19 @@
 <title>BC/VD</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="<?= WWW_PATH; ?>assets/css/master.css" />
+<? /*<link rel="stylesheet" href="<?= WWW_PATH; ?>assets/css/master.css" />*/ ?>
 </head>
 <body>
 	
+<p><strong>BC/VD</strong> // <a href="<?= WWW_PATH; ?>">Home</a> / <a href="<?= WWW_PATH; ?>all/">All</a> / <a href="<?= WWW_PATH; ?>popular/">Popular</a></p>
+
+<p>---------------------------------------------------------------------</p>
+	
+<?php
+
+echo $site->html;
+
+/*
 <h1>BC/VD</h1>
 
 <nav>
@@ -33,6 +42,18 @@
 		</div>
 	<? } ?>
 </section>
+*/
+?>
+
+<p>---------------------------------------------------------------------</p>
+
+<?php
+if (count($site->queries) > 0) {
+	foreach ($site->queries as $q) {
+		echo '<p>' . $q . '</p>'; 
+	}
+}
+?>
 	
 </body>
 </html>
