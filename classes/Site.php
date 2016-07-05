@@ -14,8 +14,29 @@ class Site {
 	}
 
 	function itemsTest() {
+		/*
+		// add OLD BC VIDEOS
+		$videos = $this->_executeQuery("select * from bc_source", false);
+		foreach ($videos as $v) {
+			$item_id = $this->_db->insert('item', array('item_type_id' => 1, 'item_status_id' => 1, 'item_date_added' => $v['date_added']));
+			if ($item_id) {
+				$data = array(
+					'item_id' 					=> $item_id, 
+					'item_attribute_type_id' 	=> 2,
+					'item_attribute_value'		=> $v['youtube_id'],
+					'item_attribute_date_added'	=> $v['date_added']
+				);
+				$this->_db->insert('item_attribute', $data);
+				echo 'added for ' . $v['youtube_id'] . '<br />';
+			}
+		}
+		exit;
+		*/
+	}
+	
+	function itemsHome() {
 		$this->_itemsQuery();
-	 	$this->_items_query .= " WHERE i.item_status_id!=0 GROUP BY i.item_id ORDER BY i.item_date_added DESC";
+	 	$this->_items_query .= " WHERE i.item_status_id!=0 GROUP BY i.item_id ORDER BY i.item_date_added DESC LIMIT 20";
 		return $this->_executeQuery($this->_items_query);
 	}
 	
@@ -28,16 +49,18 @@ class Site {
 	function itemsPopular() {
 		$this->_items_query .= ", (i.item_view_count*(i.item_vote_count+1)) as item_popularity";
 		$this->_itemsQuery();
-	 	$this->_items_query .= " WHERE i.item_status_id!=0 GROUP BY i.item_id ORDER BY item_popularity DESC";
+	 	$this->_items_query .= " WHERE i.item_status_id!=0 AND i.item_view_count > 0 AND i.item_vote_count > 0 GROUP BY i.item_id ORDER BY item_popularity DESC LIMIT 20";
 		return $this->_executeQuery($this->_items_query);
 	}
 	
-	function itemBySlug($slug=false) {
-		if ($slug) {
+	function itemVote($item_id=0) {
+		return $this->_db->singleQuery('update item set item_vote_count=item_vote_count+1 WHERE item_id=' . $item_id);
+	}
+	
+	function itemById($id=false) {
+		if ($id) {
 			$this->_itemsQuery();
-		 	$this->_items_query .= " WHERE i.item_status_id!=0 ";
-			$this->_items_query .= "GROUP BY i.item_id ";
-			$this->_items_query .= "HAVING attribute_slug=\"" . $slug . "\" ";
+		 	$this->_items_query .= " WHERE i.item_status_id!=0 AND i.item_id=" . $id . " GROUP BY i.item_id ";
 			$this->_items_query .= "ORDER BY i.item_date_added DESC LIMIT 1";
 			$items = $this->_executeQuery($this->_items_query);
 			if (isset($items[0])) { return $items[0]; }
@@ -45,9 +68,41 @@ class Site {
 		return false;
 	}
 	
+	function itemBySlug($slug=false) {
+		if ($slug) {
+			$this->_itemsQuery();
+		 	$this->_items_query .= " WHERE i.item_status_id!=0 ";
+			$this->_items_query .= " GROUP BY i.item_id";
+			$this->_items_query .= " HAVING attribute_slug=\"" . $slug . "\"";
+			$this->_items_query .= " ORDER BY i.item_date_added DESC LIMIT 1";
+			$items = $this->_executeQuery($this->_items_query);
+			if (isset($items[0])) { return $items[0]; }
+		}
+		return false;
+	}
+	
+	function itemsByCategorySlug($category_slug=false) {
+		if ($category_slug) {
+			$this->_items_query .= ", c.*";
+			$this->_itemsQuery();
+			$this->_items_query .= " LEFT JOIN category_item ci ON ci.item_id=i.item_id";
+			$this->_items_query .= " LEFT JOIN category c ON c.category_id=ci.category_id";
+			$this->_items_query .= " WHERE c.category_slug LIKE '" . $category_slug . "'";
+			$this->_items_query .= " GROUP BY i.item_id ";
+			$this->_items_query .= " ORDER BY i.item_date_added DESC";
+			return $this->_executeQuery($this->_items_query);
+		}
+		return false;
+	}
+	
+	function categoriesAll() {
+		$query = "SELECT * FROM category ORDER BY category_name";
+		return $this->_executeQuery($query);
+	}
+	
 	// PRIVATE METHODS
 	
-	private function _itemsQuery() {
+	private function _itemsQuery($from=false) {
 		if (!$this->_attributes) {
 			$this->_attributes = $this->_executeQuery("SELECT * FROM item_attribute_type ORDER BY item_attribute_type_id", true);
 		}
@@ -75,12 +130,20 @@ class Site {
 	
 	// GENERIC
 	
+	function redirect($url=false) {
+		if ($url) {
+			header('location: ' . $url);
+			exit;
+		}
+		exit;
+	}
+	
+	
 	function debug($a) {
 		echo '<pre>';
 		print_r($a);
 		echo '</pre>';
 	}
-	
 	
 	
 }

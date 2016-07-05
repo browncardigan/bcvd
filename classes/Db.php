@@ -18,7 +18,13 @@ class Db {
 		    die();
 		}
 	}
-
+	
+	function singleQuery($query=false) {
+		if ($query) {
+			$this->query[$query] = $this->dbh->prepare($query);
+			return $this->query[$query]->execute();
+		}
+	}
 	
 	function insert($table=false, $data=false) {
 		$this->table = $table;
@@ -27,7 +33,8 @@ class Db {
 			$this->action = 'insert';
 			$key = $this->table . '_' . $this->action;
 			if (!isset($this->query[$key])) {
-				$q = "INSERT INTO " . $this->table . " (" . implode(", ", array_keys($this->data)) . ") VALUES (" . implode(", ", array_fill(0, count($this->data), '?')) . ")";
+				$q = "INSERT INTO " . $this->table . " (" . implode(", ", array_keys($this->data)) . ") ";
+				$q .= "VALUES (" . implode(", ", array_fill(0, count($this->data), '?')) . ")";
 				$this->query[$key] = $this->dbh->prepare($q);
 			}
 			$this->data = array_values($this->data);

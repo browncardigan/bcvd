@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.10
+-- version 3.5.7
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Jun 30, 2016 at 09:42 AM
--- Server version: 5.5.38
--- PHP Version: 5.6.2
+-- Host: localhost
+-- Generation Time: Jul 06, 2016 at 12:08 AM
+-- Server version: 5.5.29
+-- PHP Version: 5.4.10
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -23,23 +23,306 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bc_source`
+--
+
+CREATE TABLE `bc_source` (
+  `youtube_id` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bc_source`
+--
+
+INSERT INTO `bc_source` (`youtube_id`, `date_added`) VALUES
+('u1hqh_3v4Js', '2016-01-02 11:12:41'),
+('SDsIUxKu0YY', '2016-01-02 11:42:48'),
+('KpRTvVnNuLc', '2016-01-04 19:23:49'),
+('P2P_geamYPI', '2016-01-05 14:25:02'),
+('bULmuDafMYM', '2016-01-05 19:20:11'),
+('9xH0xorgUoI', '2016-01-08 10:39:36'),
+('37tyN9w6qBg', '2016-01-11 16:56:35'),
+('3aGgiL7ThL8', '2016-01-13 14:27:30'),
+('CPyFqxjp33o', '2016-01-14 15:52:50'),
+('RO7c3sNyEjc', '2016-01-17 23:20:03'),
+('bMq1PiUbf-M', '2016-01-18 17:20:05'),
+('4HsGuWRrbOw', '2016-01-20 09:54:39'),
+('ebkddQspO0M', '2016-01-20 12:27:16'),
+('4ygG4t7SlYM', '2016-01-21 23:26:09'),
+('zYjcwYrq0VM', '2016-01-21 23:35:21'),
+('TDwwQygV2oA', '2016-01-22 13:07:28'),
+('fJdA7dwx6-4', '2016-01-23 18:03:23'),
+('RMJsqXzz5zs', '2016-01-24 16:48:25'),
+('rfNqyjZcleI', '2016-01-24 20:23:46'),
+('L91EUn2idcE', '2016-01-25 01:00:10'),
+('uFCBxh1AYKg', '2016-01-25 01:00:20'),
+('wJk7gHA3KNs', '2016-01-26 22:30:25'),
+('oR2OWrOc8xk', '2016-01-27 10:51:44'),
+('u_xWlVVXx60', '2016-01-28 14:51:27'),
+('2EY6U9MwQJI', '2016-01-30 15:36:12'),
+('rf9DxqI-jnw', '2016-02-01 22:54:03'),
+('y6lfFUhfbzw', '2016-02-02 16:53:30'),
+('PLyTrsk1Ey8', '2016-02-03 10:54:21'),
+('98lOJGTe1M0', '2016-02-04 00:39:42'),
+('xsfrXbUNeAE', '2016-02-04 09:56:34'),
+('ZObLwDczJAQ', '2016-02-04 16:45:08'),
+('aiz7sx0fD7E', '2016-02-05 12:44:46'),
+('YzzCIgfowFk', '2016-02-05 12:46:15'),
+('_ljCuKJb2wA', '2016-02-05 16:47:49'),
+('H8cKH9VBe2Q', '2016-02-11 14:32:49'),
+('Q954LxEzyY8', '2016-02-12 10:42:57'),
+('gHCE9xMJhxE', '2016-02-12 14:11:51'),
+('1QP4UV93TNM', '2016-02-14 22:30:00'),
+('twLa8fBJA9g', '2016-02-15 15:04:18'),
+('u53Jr4LDi5g', '2016-02-15 21:56:43'),
+('ciS914MaDl8', '2016-02-16 09:26:47'),
+('wXof9APC0mo', '2016-02-16 09:53:03'),
+('wXof9APC0mo', '2016-02-16 12:31:59'),
+('hqMpI-vxKtY', '2016-02-17 13:21:41'),
+('ZadzHRmrf1k', '2016-02-17 14:41:38'),
+('vYqW_hVxmRA', '2016-02-20 11:34:00'),
+('pHzTXAUKXMs', '2016-02-23 16:12:26'),
+('xd3O9g6zZ8s', '2016-02-29 19:41:44'),
+('wQYDbbPI6DQ', '2016-03-01 23:03:49'),
+('kOjUL8LwUsE', '2016-03-08 13:08:54'),
+('CEKm-TenYGs', '2016-03-10 08:16:55'),
+('IoQgb9nhTsQ', '2016-03-10 08:17:52'),
+('P-HudLN2cgM', '2016-03-10 10:14:20'),
+('JgwhXDZDGRw', '2016-03-10 10:37:34'),
+('l5aF23XpBwU', '2016-03-13 11:52:18'),
+('pdrb7pepMjY', '2016-03-13 11:55:59'),
+('cRMI4Z7ri8A', '2016-03-14 10:34:15'),
+('zkv-_LqTeQA', '2016-03-14 19:53:54'),
+('e8oWnNet1is', '2016-03-16 09:48:24'),
+('mFlPxIxmego', '2016-03-16 10:06:04'),
+('hp2hwhSJjqE', '2016-03-16 16:16:49'),
+('3mkidP2OUCk', '2016-03-17 13:56:08'),
+('9mKEyK11GRU', '2016-03-17 17:12:30'),
+('pgzEUfW2L5c', '2016-03-18 12:36:58'),
+('v75wCTMZoSY', '2016-03-21 12:02:12'),
+('5alEehUwsRs', '2016-03-21 15:32:54'),
+('wqYS475AxA4', '2016-03-22 17:19:35'),
+('uYI4kM6je-k', '2016-03-24 14:25:47'),
+('ynReaUMpH6g', '2016-03-26 09:24:30'),
+('DhrGTINyBjw', '2016-03-29 16:15:23'),
+('C_c0IeQJ3-8', '2016-03-30 22:42:16'),
+('6qgINgTTL2U', '2016-03-30 23:31:34'),
+('czkQiVBqm0I', '2016-04-01 00:07:25'),
+('07vdtBMG4Kg', '2016-04-01 15:46:56'),
+('NulgtJrRfPQ', '2016-04-12 21:56:12'),
+('JMSKQUY4yEs', '2016-04-13 20:12:29'),
+('8LhWrM1Q-0g', '2016-04-14 23:41:48'),
+('_X9XGadE690', '2016-04-16 09:20:32'),
+('gYXnngJyzXk', '2016-04-18 14:19:20'),
+('SYslEzHbpus', '2016-04-19 09:11:33'),
+('4F0Mer4kDDY', '2016-04-21 15:49:28'),
+('Jxqeob8pZog', '2016-04-26 10:50:07'),
+('1wV6_GiMR8s', '2016-04-28 23:51:33'),
+('Et-rML1-Lco', '2016-04-30 14:55:33'),
+('gKQOXYB2cd8', '2016-05-02 10:40:09'),
+('6yv0BPmeL7o', '2016-05-04 22:59:06'),
+('MNyG-xu-7SQ', '2016-05-04 23:02:04'),
+('T7Z-wbo7zrs', '2016-05-05 18:21:10'),
+('tE_5Y9IKCk0', '2016-05-09 12:28:48'),
+('dCAORZphnlY', '2016-05-09 21:24:51'),
+('-rK6GTzx7HY', '2016-05-18 22:04:10'),
+('beDN-q3UcbY', '2016-05-19 10:53:17'),
+('szbSbHMEs4c', '2016-05-22 23:49:02'),
+('raZkWL2mndY', '2016-05-23 19:14:02'),
+('5cVobwaJywg', '2016-05-25 08:48:39'),
+('XiOT7p0pcO4', '2016-05-31 15:23:00'),
+('NkspMcJNGXQ', '2016-06-01 00:48:05'),
+('pwDRVB8QDaY', '2016-06-01 00:48:22'),
+('EdodOEQxI2A', '2016-06-04 12:29:58'),
+('kZqSY-StVxk', '2016-06-05 19:11:18'),
+('rN5Oa_WdjjM', '2016-06-07 10:13:58'),
+('pu70baKJZDA', '2016-06-07 20:43:00'),
+('UPMPye2gg3o', '2016-06-11 13:38:25'),
+('r7tiwkcd0qY', '2016-06-19 03:26:56'),
+('R8bJaHYQq-s', '2016-06-21 04:54:27'),
+('4Aa2K_firtI', '2016-06-22 03:26:48'),
+('JUke3Hnv8o4', '2016-06-24 17:55:27'),
+('TwZwSIrMLmk', '2016-07-02 03:06:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  `category_slug` varchar(255) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`, `category_slug`) VALUES
+(1, 'Classic Hits', 'classic-hits'),
+(2, 'Crumpet Memes', 'crumpet-memes'),
+(3, 'Exclusives', 'exclusives'),
+(4, 'MusicTV', 'music-tv');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category_item`
+--
+
+CREATE TABLE `category_item` (
+  `item_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`item_category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `category_item`
+--
+
+INSERT INTO `category_item` (`item_category_id`, `item_id`, `category_id`) VALUES
+(1, 2, 4),
+(2, 104, 1),
+(3, 105, 1),
+(4, 106, 1),
+(5, 107, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `item`
 --
 
 CREATE TABLE `item` (
-`item_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_type_id` int(11) NOT NULL,
   `item_date_added` datetime NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `item_status_id` int(11) NOT NULL,
+  `item_vote_count` int(11) NOT NULL,
+  `item_view_count` int(11) NOT NULL,
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=212 ;
 
 --
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`item_id`, `item_type_id`, `item_date_added`, `status`) VALUES
-(1, 1, '2016-06-29 08:30:00', 1),
-(2, 1, '2016-06-30 00:00:00', 1);
+INSERT INTO `item` (`item_id`, `item_type_id`, `item_date_added`, `item_status_id`, `item_vote_count`, `item_view_count`) VALUES
+(1, 1, '2016-06-29 08:30:00', 1, 11, 1),
+(2, 1, '2016-06-30 00:00:00', 1, 17, 1),
+(104, 1, '2016-01-02 11:12:41', 1, 0, 1),
+(105, 1, '2016-01-02 11:42:48', 1, 0, 1),
+(106, 1, '2016-01-04 19:23:49', 1, 0, 1),
+(107, 1, '2016-01-05 14:25:02', 1, 0, 1),
+(108, 1, '2016-01-05 19:20:11', 1, 0, 1),
+(109, 1, '2016-01-08 10:39:36', 1, 0, 1),
+(110, 1, '2016-01-11 16:56:35', 1, 0, 1),
+(111, 1, '2016-01-13 14:27:30', 1, 0, 1),
+(112, 1, '2016-01-14 15:52:50', 1, 0, 1),
+(113, 1, '2016-01-17 23:20:03', 1, 0, 1),
+(114, 1, '2016-01-18 17:20:05', 1, 0, 1),
+(115, 1, '2016-01-20 09:54:39', 1, 0, 1),
+(116, 1, '2016-01-20 12:27:16', 1, 0, 1),
+(117, 1, '2016-01-21 23:26:09', 1, 0, 1),
+(118, 1, '2016-01-21 23:35:21', 1, 0, 1),
+(119, 1, '2016-01-22 13:07:28', 1, 0, 1),
+(120, 1, '2016-01-23 18:03:23', 1, 0, 1),
+(121, 1, '2016-01-24 16:48:25', 1, 0, 1),
+(122, 1, '2016-01-24 20:23:46', 1, 0, 1),
+(123, 1, '2016-01-25 01:00:10', 1, 0, 1),
+(124, 1, '2016-01-25 01:00:20', 1, 0, 1),
+(125, 1, '2016-01-26 22:30:25', 1, 0, 1),
+(126, 1, '2016-01-27 10:51:44', 1, 0, 1),
+(127, 1, '2016-01-28 14:51:27', 1, 0, 1),
+(128, 1, '2016-01-30 15:36:12', 1, 0, 1),
+(129, 1, '2016-02-01 22:54:03', 1, 0, 1),
+(130, 1, '2016-02-02 16:53:30', 1, 0, 1),
+(131, 1, '2016-02-03 10:54:21', 1, 0, 1),
+(132, 1, '2016-02-04 00:39:42', 1, 0, 1),
+(133, 1, '2016-02-04 09:56:34', 1, 0, 1),
+(134, 1, '2016-02-04 16:45:08', 1, 0, 1),
+(135, 1, '2016-02-05 12:44:46', 1, 0, 1),
+(136, 1, '2016-02-05 12:46:15', 1, 0, 1),
+(137, 1, '2016-02-05 16:47:49', 1, 0, 1),
+(138, 1, '2016-02-11 14:32:49', 1, 0, 1),
+(139, 1, '2016-02-12 10:42:57', 1, 0, 1),
+(140, 1, '2016-02-12 14:11:51', 1, 0, 1),
+(141, 1, '2016-02-14 22:30:00', 1, 0, 1),
+(142, 1, '2016-02-15 15:04:18', 1, 0, 1),
+(143, 1, '2016-02-15 21:56:43', 1, 0, 1),
+(144, 1, '2016-02-16 09:26:47', 1, 0, 1),
+(145, 1, '2016-02-16 09:53:03', 1, 0, 1),
+(146, 1, '2016-02-16 12:31:59', 1, 0, 1),
+(147, 1, '2016-02-17 13:21:41', 1, 0, 1),
+(148, 1, '2016-02-17 14:41:38', 1, 0, 1),
+(149, 1, '2016-02-20 11:34:00', 1, 0, 1),
+(150, 1, '2016-02-23 16:12:26', 1, 0, 1),
+(151, 1, '2016-02-29 19:41:44', 1, 0, 1),
+(152, 1, '2016-03-01 23:03:49', 1, 0, 1),
+(153, 1, '2016-03-08 13:08:54', 1, 0, 1),
+(154, 1, '2016-03-10 08:16:55', 1, 0, 1),
+(155, 1, '2016-03-10 08:17:52', 1, 0, 1),
+(156, 1, '2016-03-10 10:14:20', 1, 0, 1),
+(157, 1, '2016-03-10 10:37:34', 1, 0, 1),
+(158, 1, '2016-03-13 11:52:18', 1, 0, 1),
+(159, 1, '2016-03-13 11:55:59', 1, 0, 1),
+(160, 1, '2016-03-14 10:34:15', 1, 0, 1),
+(161, 1, '2016-03-14 19:53:54', 1, 0, 1),
+(162, 1, '2016-03-16 09:48:24', 1, 0, 1),
+(163, 1, '2016-03-16 10:06:04', 1, 0, 1),
+(164, 1, '2016-03-16 16:16:49', 1, 0, 1),
+(165, 1, '2016-03-17 13:56:08', 1, 0, 1),
+(166, 1, '2016-03-17 17:12:30', 1, 0, 1),
+(167, 1, '2016-03-18 12:36:58', 1, 0, 1),
+(168, 1, '2016-03-21 12:02:12', 1, 0, 1),
+(169, 1, '2016-03-21 15:32:54', 1, 0, 1),
+(170, 1, '2016-03-22 17:19:35', 1, 0, 1),
+(171, 1, '2016-03-24 14:25:47', 1, 0, 1),
+(172, 1, '2016-03-26 09:24:30', 1, 0, 1),
+(173, 1, '2016-03-29 16:15:23', 1, 0, 1),
+(174, 1, '2016-03-30 22:42:16', 1, 0, 1),
+(175, 1, '2016-03-30 23:31:34', 1, 0, 1),
+(176, 1, '2016-04-01 00:07:25', 1, 0, 1),
+(177, 1, '2016-04-01 15:46:56', 1, 0, 1),
+(178, 1, '2016-04-12 21:56:12', 1, 0, 1),
+(179, 1, '2016-04-13 20:12:29', 1, 0, 1),
+(180, 1, '2016-04-14 23:41:48', 1, 0, 1),
+(181, 1, '2016-04-16 09:20:32', 1, 0, 1),
+(182, 1, '2016-04-18 14:19:20', 1, 0, 1),
+(183, 1, '2016-04-19 09:11:33', 1, 0, 1),
+(184, 1, '2016-04-21 15:49:28', 1, 0, 1),
+(185, 1, '2016-04-26 10:50:07', 1, 0, 1),
+(186, 1, '2016-04-28 23:51:33', 1, 0, 1),
+(187, 1, '2016-04-30 14:55:33', 1, 0, 1),
+(188, 1, '2016-05-02 10:40:09', 1, 0, 1),
+(189, 1, '2016-05-04 22:59:06', 1, 0, 1),
+(190, 1, '2016-05-04 23:02:04', 1, 0, 1),
+(191, 1, '2016-05-05 18:21:10', 1, 0, 1),
+(192, 1, '2016-05-09 12:28:48', 1, 0, 1),
+(193, 1, '2016-05-09 21:24:51', 1, 0, 1),
+(194, 1, '2016-05-18 22:04:10', 1, 0, 1),
+(195, 1, '2016-05-19 10:53:17', 1, 0, 1),
+(196, 1, '2016-05-22 23:49:02', 1, 0, 1),
+(197, 1, '2016-05-23 19:14:02', 1, 0, 1),
+(198, 1, '2016-05-25 08:48:39', 1, 0, 1),
+(199, 1, '2016-05-31 15:23:00', 1, 1, 1),
+(200, 1, '2016-06-01 00:48:05', 1, 6, 1),
+(201, 1, '2016-06-01 00:48:22', 1, 0, 1),
+(202, 1, '2016-06-04 12:29:58', 1, 0, 1),
+(203, 1, '2016-06-05 19:11:18', 1, 0, 1),
+(204, 1, '2016-06-07 10:13:58', 1, 0, 1),
+(205, 1, '2016-06-07 20:43:00', 1, 0, 1),
+(206, 1, '2016-06-11 13:38:25', 1, 3, 1),
+(207, 1, '2016-06-19 03:26:56', 1, 0, 1),
+(208, 1, '2016-06-21 04:54:27', 1, 0, 1),
+(209, 1, '2016-06-22 03:26:48', 1, 0, 1),
+(210, 1, '2016-06-24 17:55:27', 1, 2, 1),
+(211, 1, '2016-07-02 03:06:41', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -48,12 +331,14 @@ INSERT INTO `item` (`item_id`, `item_type_id`, `item_date_added`, `status`) VALU
 --
 
 CREATE TABLE `item_attribute` (
-`item_attribute_id` int(11) NOT NULL,
+  `item_attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
   `item_attribute_type_id` int(11) NOT NULL,
   `item_attribute_value` text NOT NULL,
-  `item_attribute_date_added` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `item_attribute_date_added` datetime NOT NULL,
+  PRIMARY KEY (`item_attribute_id`),
+  KEY `item_id` (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=219 ;
 
 --
 -- Dumping data for table `item_attribute`
@@ -61,7 +346,122 @@ CREATE TABLE `item_attribute` (
 
 INSERT INTO `item_attribute` (`item_attribute_id`, `item_id`, `item_attribute_type_id`, `item_attribute_value`, `item_attribute_date_added`) VALUES
 (1, 1, 5, 'Nimbin Drug Raids', '2016-06-29 00:00:00'),
-(2, 1, 3, '7 News (North Coast)', '2016-06-29 00:00:00');
+(2, 1, 3, '7 News (North Coast)', '2016-06-29 00:00:00'),
+(3, 1, 6, 'nimbin-drug-raids', '2016-07-01 00:00:00'),
+(4, 1, 7, 'mate.jpg', '2016-07-01 00:00:00'),
+(5, 1, 1, 'acab.mp4', '2016-07-01 00:00:00'),
+(6, 2, 2, 'ANLhUtwvYAk', '2016-07-01 00:00:00'),
+(108, 104, 2, 'u1hqh_3v4Js', '2016-01-02 11:12:41'),
+(109, 105, 2, 'SDsIUxKu0YY', '2016-01-02 11:42:48'),
+(110, 106, 2, 'KpRTvVnNuLc', '2016-01-04 19:23:49'),
+(111, 107, 2, 'P2P_geamYPI', '2016-01-05 14:25:02'),
+(112, 108, 2, 'bULmuDafMYM', '2016-01-05 19:20:11'),
+(113, 109, 2, '9xH0xorgUoI', '2016-01-08 10:39:36'),
+(114, 110, 2, '37tyN9w6qBg', '2016-01-11 16:56:35'),
+(115, 111, 2, '3aGgiL7ThL8', '2016-01-13 14:27:30'),
+(116, 112, 2, 'CPyFqxjp33o', '2016-01-14 15:52:50'),
+(117, 113, 2, 'RO7c3sNyEjc', '2016-01-17 23:20:03'),
+(118, 114, 2, 'bMq1PiUbf-M', '2016-01-18 17:20:05'),
+(119, 115, 2, '4HsGuWRrbOw', '2016-01-20 09:54:39'),
+(120, 116, 2, 'ebkddQspO0M', '2016-01-20 12:27:16'),
+(121, 117, 2, '4ygG4t7SlYM', '2016-01-21 23:26:09'),
+(122, 118, 2, 'zYjcwYrq0VM', '2016-01-21 23:35:21'),
+(123, 119, 2, 'TDwwQygV2oA', '2016-01-22 13:07:28'),
+(124, 120, 2, 'fJdA7dwx6-4', '2016-01-23 18:03:23'),
+(125, 121, 2, 'RMJsqXzz5zs', '2016-01-24 16:48:25'),
+(126, 122, 2, 'rfNqyjZcleI', '2016-01-24 20:23:46'),
+(127, 123, 2, 'L91EUn2idcE', '2016-01-25 01:00:10'),
+(128, 124, 2, 'uFCBxh1AYKg', '2016-01-25 01:00:20'),
+(129, 125, 2, 'wJk7gHA3KNs', '2016-01-26 22:30:25'),
+(130, 126, 2, 'oR2OWrOc8xk', '2016-01-27 10:51:44'),
+(131, 127, 2, 'u_xWlVVXx60', '2016-01-28 14:51:27'),
+(132, 128, 2, '2EY6U9MwQJI', '2016-01-30 15:36:12'),
+(133, 129, 2, 'rf9DxqI-jnw', '2016-02-01 22:54:03'),
+(134, 130, 2, 'y6lfFUhfbzw', '2016-02-02 16:53:30'),
+(135, 131, 2, 'PLyTrsk1Ey8', '2016-02-03 10:54:21'),
+(136, 132, 2, '98lOJGTe1M0', '2016-02-04 00:39:42'),
+(137, 133, 2, 'xsfrXbUNeAE', '2016-02-04 09:56:34'),
+(138, 134, 2, 'ZObLwDczJAQ', '2016-02-04 16:45:08'),
+(139, 135, 2, 'aiz7sx0fD7E', '2016-02-05 12:44:46'),
+(140, 136, 2, 'YzzCIgfowFk', '2016-02-05 12:46:15'),
+(141, 137, 2, '_ljCuKJb2wA', '2016-02-05 16:47:49'),
+(142, 138, 2, 'H8cKH9VBe2Q', '2016-02-11 14:32:49'),
+(143, 139, 2, 'Q954LxEzyY8', '2016-02-12 10:42:57'),
+(144, 140, 2, 'gHCE9xMJhxE', '2016-02-12 14:11:51'),
+(145, 141, 2, '1QP4UV93TNM', '2016-02-14 22:30:00'),
+(146, 142, 2, 'twLa8fBJA9g', '2016-02-15 15:04:18'),
+(147, 143, 2, 'u53Jr4LDi5g', '2016-02-15 21:56:43'),
+(148, 144, 2, 'ciS914MaDl8', '2016-02-16 09:26:47'),
+(149, 145, 2, 'wXof9APC0mo', '2016-02-16 09:53:03'),
+(150, 146, 2, 'wXof9APC0mo', '2016-02-16 12:31:59'),
+(151, 147, 2, 'hqMpI-vxKtY', '2016-02-17 13:21:41'),
+(152, 148, 2, 'ZadzHRmrf1k', '2016-02-17 14:41:38'),
+(153, 149, 2, 'vYqW_hVxmRA', '2016-02-20 11:34:00'),
+(154, 150, 2, 'pHzTXAUKXMs', '2016-02-23 16:12:26'),
+(155, 151, 2, 'xd3O9g6zZ8s', '2016-02-29 19:41:44'),
+(156, 152, 2, 'wQYDbbPI6DQ', '2016-03-01 23:03:49'),
+(157, 153, 2, 'kOjUL8LwUsE', '2016-03-08 13:08:54'),
+(158, 154, 2, 'CEKm-TenYGs', '2016-03-10 08:16:55'),
+(159, 155, 2, 'IoQgb9nhTsQ', '2016-03-10 08:17:52'),
+(160, 156, 2, 'P-HudLN2cgM', '2016-03-10 10:14:20'),
+(161, 157, 2, 'JgwhXDZDGRw', '2016-03-10 10:37:34'),
+(162, 158, 2, 'l5aF23XpBwU', '2016-03-13 11:52:18'),
+(163, 159, 2, 'pdrb7pepMjY', '2016-03-13 11:55:59'),
+(164, 160, 2, 'cRMI4Z7ri8A', '2016-03-14 10:34:15'),
+(165, 161, 2, 'zkv-_LqTeQA', '2016-03-14 19:53:54'),
+(166, 162, 2, 'e8oWnNet1is', '2016-03-16 09:48:24'),
+(167, 163, 2, 'mFlPxIxmego', '2016-03-16 10:06:04'),
+(168, 164, 2, 'hp2hwhSJjqE', '2016-03-16 16:16:49'),
+(169, 165, 2, '3mkidP2OUCk', '2016-03-17 13:56:08'),
+(170, 166, 2, '9mKEyK11GRU', '2016-03-17 17:12:30'),
+(171, 167, 2, 'pgzEUfW2L5c', '2016-03-18 12:36:58'),
+(172, 168, 2, 'v75wCTMZoSY', '2016-03-21 12:02:12'),
+(173, 169, 2, '5alEehUwsRs', '2016-03-21 15:32:54'),
+(174, 170, 2, 'wqYS475AxA4', '2016-03-22 17:19:35'),
+(175, 171, 2, 'uYI4kM6je-k', '2016-03-24 14:25:47'),
+(176, 172, 2, 'ynReaUMpH6g', '2016-03-26 09:24:30'),
+(177, 173, 2, 'DhrGTINyBjw', '2016-03-29 16:15:23'),
+(178, 174, 2, 'C_c0IeQJ3-8', '2016-03-30 22:42:16'),
+(179, 175, 2, '6qgINgTTL2U', '2016-03-30 23:31:34'),
+(180, 176, 2, 'czkQiVBqm0I', '2016-04-01 00:07:25'),
+(181, 177, 2, '07vdtBMG4Kg', '2016-04-01 15:46:56'),
+(182, 178, 2, 'NulgtJrRfPQ', '2016-04-12 21:56:12'),
+(183, 179, 2, 'JMSKQUY4yEs', '2016-04-13 20:12:29'),
+(184, 180, 2, '8LhWrM1Q-0g', '2016-04-14 23:41:48'),
+(185, 181, 2, '_X9XGadE690', '2016-04-16 09:20:32'),
+(186, 182, 2, 'gYXnngJyzXk', '2016-04-18 14:19:20'),
+(187, 183, 2, 'SYslEzHbpus', '2016-04-19 09:11:33'),
+(188, 184, 2, '4F0Mer4kDDY', '2016-04-21 15:49:28'),
+(189, 185, 2, 'Jxqeob8pZog', '2016-04-26 10:50:07'),
+(190, 186, 2, '1wV6_GiMR8s', '2016-04-28 23:51:33'),
+(191, 187, 2, 'Et-rML1-Lco', '2016-04-30 14:55:33'),
+(192, 188, 2, 'gKQOXYB2cd8', '2016-05-02 10:40:09'),
+(193, 189, 2, '6yv0BPmeL7o', '2016-05-04 22:59:06'),
+(194, 190, 2, 'MNyG-xu-7SQ', '2016-05-04 23:02:04'),
+(195, 191, 2, 'T7Z-wbo7zrs', '2016-05-05 18:21:10'),
+(196, 192, 2, 'tE_5Y9IKCk0', '2016-05-09 12:28:48'),
+(197, 193, 2, 'dCAORZphnlY', '2016-05-09 21:24:51'),
+(198, 194, 2, '-rK6GTzx7HY', '2016-05-18 22:04:10'),
+(199, 195, 2, 'beDN-q3UcbY', '2016-05-19 10:53:17'),
+(200, 196, 2, 'szbSbHMEs4c', '2016-05-22 23:49:02'),
+(201, 197, 2, 'raZkWL2mndY', '2016-05-23 19:14:02'),
+(202, 198, 2, '5cVobwaJywg', '2016-05-25 08:48:39'),
+(203, 199, 2, 'XiOT7p0pcO4', '2016-05-31 15:23:00'),
+(204, 200, 2, 'NkspMcJNGXQ', '2016-06-01 00:48:05'),
+(205, 201, 2, 'pwDRVB8QDaY', '2016-06-01 00:48:22'),
+(206, 202, 2, 'EdodOEQxI2A', '2016-06-04 12:29:58'),
+(207, 203, 2, 'kZqSY-StVxk', '2016-06-05 19:11:18'),
+(208, 204, 2, 'rN5Oa_WdjjM', '2016-06-07 10:13:58'),
+(209, 205, 2, 'pu70baKJZDA', '2016-06-07 20:43:00'),
+(210, 206, 2, 'UPMPye2gg3o', '2016-06-11 13:38:25'),
+(211, 207, 2, 'r7tiwkcd0qY', '2016-06-19 03:26:56'),
+(212, 208, 2, 'R8bJaHYQq-s', '2016-06-21 04:54:27'),
+(213, 209, 2, '4Aa2K_firtI', '2016-06-22 03:26:48'),
+(214, 210, 2, 'JUke3Hnv8o4', '2016-06-24 17:55:27'),
+(215, 211, 2, 'TwZwSIrMLmk', '2016-07-02 03:06:41'),
+(216, 2, 5, 'The Goon Sax ''Sometimes Accidentally''', '2016-07-04 00:00:00'),
+(217, 2, 6, 'the-goon-sax-sometime-accidentally', '2016-07-04 00:00:00'),
+(218, 104, 5, 'Tester', '2016-07-04 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -70,9 +470,10 @@ INSERT INTO `item_attribute` (`item_attribute_id`, `item_id`, `item_attribute_ty
 --
 
 CREATE TABLE `item_attribute_type` (
-`item_attribute_type_id` int(11) NOT NULL,
-  `item_attribute_type_name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `item_attribute_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_attribute_type_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`item_attribute_type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `item_attribute_type`
@@ -83,7 +484,29 @@ INSERT INTO `item_attribute_type` (`item_attribute_type_id`, `item_attribute_typ
 (2, 'youtube_id'),
 (3, 'source'),
 (4, 'description'),
-(5, 'title');
+(5, 'title'),
+(6, 'slug'),
+(7, 'image');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_status`
+--
+
+CREATE TABLE `item_status` (
+  `item_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_status_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`item_status_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `item_status`
+--
+
+INSERT INTO `item_status` (`item_status_id`, `item_status_name`) VALUES
+(1, 'active'),
+(2, 'featured');
 
 -- --------------------------------------------------------
 
@@ -92,70 +515,19 @@ INSERT INTO `item_attribute_type` (`item_attribute_type_id`, `item_attribute_typ
 --
 
 CREATE TABLE `item_type` (
-`item_type_id` int(11) NOT NULL,
-  `item_type_name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `item_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_type_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`item_type_id`),
+  UNIQUE KEY `item_type_id` (`item_type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `item_type`
 --
 
 INSERT INTO `item_type` (`item_type_id`, `item_type_name`) VALUES
-(1, 'video'),
-(2, 'video_youtube');
+(1, 'video');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `item`
---
-ALTER TABLE `item`
- ADD PRIMARY KEY (`item_id`);
-
---
--- Indexes for table `item_attribute`
---
-ALTER TABLE `item_attribute`
- ADD PRIMARY KEY (`item_attribute_id`), ADD KEY `item_id` (`item_id`);
-
---
--- Indexes for table `item_attribute_type`
---
-ALTER TABLE `item_attribute_type`
- ADD PRIMARY KEY (`item_attribute_type_id`);
-
---
--- Indexes for table `item_type`
---
-ALTER TABLE `item_type`
- ADD PRIMARY KEY (`item_type_id`), ADD UNIQUE KEY `item_type_id` (`item_type_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `item`
---
-ALTER TABLE `item`
-MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `item_attribute`
---
-ALTER TABLE `item_attribute`
-MODIFY `item_attribute_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `item_attribute_type`
---
-ALTER TABLE `item_attribute_type`
-MODIFY `item_attribute_type_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `item_type`
---
-ALTER TABLE `item_type`
-MODIFY `item_type_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
